@@ -1,0 +1,83 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local himEHUB = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local TeleportBT = Instance.new("TextButton")
+local TeleportF = Instance.new("Frame")
+local place1 = Instance.new("TextButton")
+
+--Properties:
+
+himEHUB.Name = "himEHUB"
+himEHUB.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+himEHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+main.Name = "main"
+main.Parent = himEHUB
+main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+main.Position = UDim2.new(0.343421251, 0, 0.104384132, 0)
+main.Size = UDim2.new(0.307740659, 0, 0.701461375, 0)
+
+TeleportBT.Name = "TeleportBT"
+TeleportBT.Parent = main
+TeleportBT.BackgroundColor3 = Color3.fromRGB(85, 255, 255)
+TeleportBT.Position = UDim2.new(0.0298220143, 0, 0.125, 0)
+TeleportBT.Size = UDim2.new(0.234897986, 0, 0.0773809552, 0)
+TeleportBT.Font = Enum.Font.SourceSans
+TeleportBT.Text = "Teleport"
+TeleportBT.TextColor3 = Color3.fromRGB(255, 255, 255)
+TeleportBT.TextSize = 24.000
+
+TeleportF.Name = "TeleportF"
+TeleportF.Parent = main
+TeleportF.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
+TeleportF.BackgroundTransparency = 0.450
+TeleportF.BorderSizePixel = 0
+TeleportF.Position = UDim2.new(0.283132732, 0, 0.095238097, 0)
+TeleportF.Size = UDim2.new(0.676000535, 0, 0.854166687, 0)
+TeleportF.Visible = false
+
+place1.Name = "place1"
+place1.Parent = TeleportF
+place1.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+place1.BackgroundTransparency = 0.150
+place1.Position = UDim2.new(0.0483454876, 0, 0.0348432064, 0)
+place1.Size = UDim2.new(0.434894502, 0, 0.0905923322, 0)
+place1.Font = Enum.Font.SourceSans
+place1.Text = "Place1"
+place1.TextColor3 = Color3.fromRGB(255, 255, 255)
+place1.TextScaled = true
+place1.TextSize = 14.000
+place1.TextWrapped = true
+
+-- Scripts:
+
+local function UDZFKF_fake_script() -- TeleportBT.LocalScript 
+	local script = Instance.new('LocalScript', TeleportBT)
+
+	local Frame = script.Parent.Parent.TeleportF
+	
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if Frame.Visible == false then
+			Frame.Visible = true
+		else
+			Frame.Visible = false
+		end
+	end)
+end
+coroutine.wrap(UDZFKF_fake_script)()
+local function CVFGMHZ_fake_script() -- place1.LocalScript 
+	local script = Instance.new('LocalScript', place1)
+
+	local player = script.Parent.Parent.Parent.Parent.Parent.Parent
+	
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		player.Character.HumanoidRootPart.CFrame = CFrame.new(1,1,1)
+	end)
+end
+coroutine.wrap(CVFGMHZ_fake_script)()
